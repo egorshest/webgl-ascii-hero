@@ -1,8 +1,8 @@
 "use client";
 
 import { EffectScene } from "./effect-scene";
-import { Header } from "./header";
 import { FeatureCards } from "./feature-cards";
+import { DemoShowcase } from "./demo-showcase";
 
 function ArrowIcon() {
   return (
@@ -40,8 +40,8 @@ function GithubIcon() {
 function CoffeeIcon() {
   return (
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -62,20 +62,18 @@ function CoffeeIcon() {
 export function Hero() {
   return (
     <div className="w-full min-h-screen bg-background text-foreground">
-      <Header />
-
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex flex-col">
         {/* 3D Canvas Background */}
         <div className="absolute inset-0 z-0">
           <EffectScene className="h-full w-full" enableZoom={false} />
           {/* Gradient overlays for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent pointer-events-none" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-24 pb-16">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-24">
           <div className="max-w-3xl mx-auto text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 rounded-full border border-border-bright bg-surface/50 backdrop-blur-sm">
@@ -100,35 +98,37 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              {/* Primary -- Fork from GitHub */}
               <a
                 href="https://github.com/egorshest/webgl-ascii-hero"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 px-6 py-3 rounded-lg bg-foreground text-background font-medium text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-200 shadow-lg shadow-foreground/5"
+                className="flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-foreground text-background font-semibold text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-200 shadow-lg shadow-foreground/5"
               >
                 <GithubIcon />
-                Deploy in 2 Clicks
+                Fork on GitHub
                 <ArrowIcon />
               </a>
 
+              {/* Secondary -- Step-by-step guide */}
               <a
                 href="https://medium.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 rounded-lg border border-border-bright text-foreground font-medium text-sm hover:border-accent/50 hover:text-accent transition-all duration-200 bg-background/50 backdrop-blur-sm"
+                className="flex items-center gap-2 px-6 py-3.5 rounded-lg border border-border-bright text-foreground font-medium text-sm hover:border-accent/50 hover:text-accent transition-all duration-200 bg-surface/60 backdrop-blur-sm"
               >
                 Read Step-by-Step Guide
                 <ArrowIcon />
               </a>
             </div>
 
-            {/* Buy me a coffee */}
-            <div className="mt-6">
+            {/* Buy me a coffee -- visible yellow accent */}
+            <div className="mt-8">
               <a
                 href="https://www.buymeacoffee.com/egorbuilds"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium text-muted hover:text-[#FFDD00] border border-transparent hover:border-[#FFDD00]/20 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FFDD00]/10 border border-[#FFDD00]/30 text-[#FFDD00] text-xs font-semibold hover:bg-[#FFDD00]/20 hover:border-[#FFDD00]/50 transition-all duration-200"
               >
                 <CoffeeIcon />
                 Buy me a coffee
@@ -148,6 +148,9 @@ export function Hero() {
         </div>
       </section>
 
+      {/* Demo Showcase Section */}
+      <DemoShowcase />
+
       {/* Features Section */}
       <FeatureCards />
 
@@ -157,12 +160,12 @@ export function Hero() {
           <p className="font-mono text-xs text-muted-foreground">
             Built by{" "}
             <a
-              href="https://github.com/egorshest"
+              href="https://egorbuilds.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-accent transition-colors"
             >
-              @egorshest
+              egorbuilds.com
             </a>
           </p>
           <div className="flex items-center gap-6">
