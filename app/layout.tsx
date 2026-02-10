@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WebGL ASCII Shader Effect",
-  description: "A beautiful WebGL demo featuring a 3D model rendered with React Three Fiber and post-processed into animated ASCII art using custom shaders.",
+  title: "WebGL ASCII Hero -- Next.js Boilerplate with 3D ASCII Shader",
+  description: "A beautiful Next.js project boilerplate with a hero page WebGL demo featuring a 3D GLTF model rendered with React Three Fiber and post-processed into an animated ASCII art effect using custom shaders.",
 };
 
 export default function RootLayout({
