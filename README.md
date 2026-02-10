@@ -1,6 +1,6 @@
 # WebGL ASCII Shader Effect
 
-A beautiful WebGL demo featuring a 3D GLTF model rendered with React Three Fiber and post-processed into an animated ASCII art effect using custom shaders.
+A beautiful next.js porject boilerplate with a hero page WebGL demo featuring a 3D GLTF model rendered with React Three Fiber and post-processed into an animated ASCII art effect using custom shaders.
 
 ## Features
 
