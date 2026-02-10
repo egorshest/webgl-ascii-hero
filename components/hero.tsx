@@ -67,16 +67,15 @@ export function Hero() {
         {/* 3D Canvas Background */}
         <div className="absolute inset-0 z-0">
           <EffectScene className="h-full w-full" enableZoom={false} />
-          {/* Gradient overlays for readability -- kept light so the ASCII art shows through */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background pointer-events-none" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,var(--color-background)_80%)] pointer-events-none" />
+          {/* Soft bottom fade so the canvas blends into the next section */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-24">
-          <div className="max-w-3xl mx-auto text-center rounded-2xl px-8 py-10 bg-background/40 backdrop-blur-md border border-border/30">
+          <div className="max-w-3xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 rounded-full border border-border-bright bg-surface/50 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 rounded-full border border-border-bright bg-background/70 backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               <span className="font-mono text-xs text-muted tracking-wide">
                 Next.js + React Three Fiber + GLSL
@@ -84,14 +83,20 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-balance mb-6">
+            <h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-balance mb-6"
+              style={{ textShadow: "0 2px 20px rgba(0,0,0,0.9), 0 0px 60px rgba(0,0,0,0.7)" }}
+            >
               <span className="text-foreground">3D models,</span>
               <br />
               <span className="text-accent">rendered in ASCII</span>
             </h1>
 
             {/* Description */}
-            <p className="text-base md:text-lg text-muted max-w-xl mx-auto leading-relaxed mb-10">
+            <p
+              className="text-base md:text-lg text-muted max-w-xl mx-auto leading-relaxed mb-10"
+              style={{ textShadow: "0 1px 12px rgba(0,0,0,0.9), 0 0px 40px rgba(0,0,0,0.6)" }}
+            >
               A Next.js boilerplate with a hero page featuring a 3D GLTF model
               post-processed into animated ASCII art using custom GLSL shaders.
             </p>
