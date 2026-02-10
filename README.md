@@ -5,7 +5,7 @@ A beautiful WebGL demo featuring a 3D GLTF model rendered with React Three Fiber
 ## Features
 
 - 🎨 **Real-time ASCII conversion** - Custom GLSL shader converts 3D scene to ASCII art
-- 🦆 **Interactive 3D model** - Drag to rotate, hover to zoom
+- 🎭 **Interactive 3D model** - Drag to rotate, hover to zoom
 - ✨ **Post-processing effects** - CRT-style scanlines, vignette, and glow effects
 - 🎯 **Mouse-reactive** - Mouse position affects glow and visual effects
 - 📱 **Responsive** - Works on desktop and mobile devices
@@ -30,8 +30,8 @@ A beautiful WebGL demo featuring a 3D GLTF model rendered with React Three Fiber
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd webgl-demo
+git clone https://github.com/egorshest/webgl-ascii-hero.git
+cd webgl-ascii-hero
 
 # Install dependencies
 npm install
@@ -45,7 +45,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the effect.
 ## Project Structure
 
 ```
-webgl-demo/
+webgl-ascii-hero/
 ├── app/
 │   ├── layout.tsx      # Root layout
 │   ├── page.tsx        # Home page
@@ -56,18 +56,43 @@ webgl-demo/
 │   └── ascii-effect.tsx # ASCII post-processing shader
 └── public/
     └── models/
-        └── Duck.glb    # 3D model (GLTF format)
+        └── tiger.glb   # 3D model (GLTF format) - DEMO ONLY, replace with your own
 ```
 
 ## Customization
 
-### Change the 3D Model
+### Adding Your Own 3D Model
 
-Replace `public/models/Duck.glb` with your own GLTF/GLB model and update the path in `components/effect-scene.tsx`:
+⚠️ **Important:** The included `tiger.glb` model is for **demonstration purposes only**. Please remove it and use your own model.
 
-```tsx
-const { scene } = useGLTF("/models/YourModel.glb")
-```
+**Steps to add your own model:**
+
+1. **Download a GLB model** from any source (make sure you have the rights to use it):
+   - [Sketchfab](https://sketchfab.com/3d-models?features=downloadable&sort_by=-likeCount&q=cc0) - Filter by CC0 license for free models
+   - [Poly Haven](https://polyhaven.com/models) - CC0 models
+   - [glTF Sample Models](https://github.com/KhronosGroup/glTF-Sample-Models) - Various licenses
+   - Or create your own using Blender, Maya, etc.
+
+2. **Place your model** in the `public/models/` folder:
+   ```bash
+   # Remove the demo model
+   rm public/models/tiger.glb
+   
+   # Add your own GLB file
+   # Place your model.glb file in public/models/
+   ```
+
+3. **Update the model path** in `components/effect-scene.tsx` (line 12):
+   ```tsx
+   const { scene } = useGLTF("/models/your-model.glb")
+   ```
+
+4. **Adjust the scale** if needed in `components/effect-scene.tsx` (line 124):
+   ```tsx
+   <Tiger scale={8} />  // Change the number to adjust size
+   ```
+
+5. **Update the component name** from `Tiger` to match your model (optional, for clarity).
 
 ### Adjust ASCII Effect
 
@@ -111,18 +136,5 @@ MIT License - feel free to use this project for your own purposes.
 
 ## Credits
 
-- Duck model: [Three.js examples](https://threejs.org/examples/models/gltf/Duck/) - **Note:** The Duck.glb model included in this repository is copyrighted by Sony Computer Entertainment Inc. (2006) and licensed under the [SCEA Shared Source License, Version 1.0](https://web.archive.org/web/20160320123355/http://research.scea.com/scea_shared_source_license.html). This license has restrictions on distribution. For unrestricted distribution, consider replacing it with a CC0/public domain model.
 - ASCII shader inspiration: Classic terminal art and CRT displays
-
-## Model Licensing Note
-
-⚠️ **Important:** The included `Duck.glb` model is subject to the SCEA Shared Source License, Version 1.0, which may restrict redistribution. If you plan to distribute this repository publicly, consider:
-
-1. **Replacing the model** with a freely licensed alternative (CC0, MIT, or public domain)
-2. **Removing the model** and instructing users to provide their own GLTF/GLB file
-3. **Reviewing the SCEA license** to ensure your use case complies with its terms
-
-Some free alternatives:
-- [glTF Sample Models](https://github.com/KhronosGroup/glTF-Sample-Models) (check individual model licenses)
-- [Sketchfab CC0 models](https://sketchfab.com/3d-models?features=downloadable&sort_by=-likeCount&q=cc0)
-- [Poly Haven](https://polyhaven.com/models) (CC0 models)
+- Built with [React Three Fiber](https://docs.pmnd.rs/react-three-fiber), [Three.js](https://threejs.org/), and [Next.js](https://nextjs.org/)
