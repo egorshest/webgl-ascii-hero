@@ -67,14 +67,14 @@ export function Hero() {
         {/* 3D Canvas Background */}
         <div className="absolute inset-0 z-0">
           <EffectScene className="h-full w-full" enableZoom={false} />
-          {/* Gradient overlays for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent pointer-events-none" />
+          {/* Gradient overlays for readability -- kept light so the ASCII art shows through */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,var(--color-background)_80%)] pointer-events-none" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-24">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center rounded-2xl px-8 py-10 bg-background/40 backdrop-blur-md border border-border/30">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 rounded-full border border-border-bright bg-surface/50 backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
