@@ -84,28 +84,7 @@ export function DemoShowcase() {
                 </div>
               </div>
 
-              {/* Capability hints */}
-              <div className="mt-10 pt-6 border-t border-border">
-                <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-3">
-                  Supports
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "Headlines & copy",
-                    "CTAs & buttons",
-                    "Sign-up forms",
-                    "Social proof",
-                    "Badges & tags",
-                  ].map((item) => (
-                    <span
-                      key={item}
-                      className="px-2.5 py-1 rounded-md bg-surface border border-border text-[11px] text-muted font-mono"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
+
             </div>
 
             {/* Right -- 3D Canvas section */}
