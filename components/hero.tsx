@@ -10,7 +10,7 @@ export function Hero() {
       <section className="w-full py-12 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            This is yourhero section component
+            This is your hero section component
           </h1>
         </div>
       </section>
